@@ -373,7 +373,11 @@ $.widget("ui.dialog", {
 					})
 					.appendTo( that.uiButtonSet );
 				if ( $.fn.button ) {
-					button.button();
+					if ( props.options != null){
+						button.button(props.options);
+					} else {
+						button.button();
+					}
 				}
 			});
 			this.uiDialog.addClass( "ui-dialog-buttons" );
